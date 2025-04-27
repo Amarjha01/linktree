@@ -14,24 +14,16 @@ import {
   Terminal,
   Cpu,
   Layout,
-  LucideArrowRight,
-  Braces,
   ChevronRight
 } from 'lucide-react';
 
-
-
-export default function EnhancedFuturisticLinkTree() {
+export default function SpaceshipFuturisticLinkTree() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
   const [activeSection, setActiveSection] = useState('links');
   const containerRef = useRef(null);
   const [cursorVariant, setCursorVariant] = useState("default");
   
-
-  
-
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -61,7 +53,7 @@ export default function EnhancedFuturisticLinkTree() {
     { 
       id: 3, 
       title: 'LinkedIn', 
-      url: 'https://www.linkedin.com/in/amarjha01/', 
+      url: '#', 
       icon: <Linkedin className="text-blue-300" size={20} />, 
       color: 'bg-gradient-to-r from-blue-500 to-indigo-500',
       description: 'Connect with me professionally'
@@ -69,7 +61,7 @@ export default function EnhancedFuturisticLinkTree() {
     { 
       id: 4, 
       title: 'Twitter', 
-      url: 'https://twitter.com/amarjha01', 
+      url: '#', 
       icon: <Twitter className="text-sky-300" size={20} />, 
       color: 'bg-gradient-to-r from-sky-500 to-blue-500',
       description: 'Follow me for tech updates and insights'
@@ -77,7 +69,7 @@ export default function EnhancedFuturisticLinkTree() {
     { 
       id: 5, 
       title: 'Instagram', 
-      url: 'https://www.instagram.com/amarjha.tech/', 
+      url: '#', 
       icon: <Instagram className="text-rose-300" size={20} />, 
       color: 'bg-gradient-to-r from-pink-500 to-rose-500',
       description: 'Behind the scenes and personal projects'
@@ -85,7 +77,7 @@ export default function EnhancedFuturisticLinkTree() {
     { 
       id: 6, 
       title: 'Contact Me', 
-      url: 'mailto:amarjha880@gmail.com', 
+      url: 'mailto:contact@example.com', 
       icon: <Mail className="text-emerald-300" size={20} />, 
       color: 'bg-gradient-to-r from-emerald-500 to-teal-500',
       description: 'Get in touch for collaborations and opportunities'
@@ -105,17 +97,17 @@ export default function EnhancedFuturisticLinkTree() {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution with React, Node.js and MongoDB',
-      url: 'https://www.electramart.ninja/',
-      image: '/projects/Electramartproject.webp',
+      url: '#',
+      image: '/api/placeholder/400/200',
       tags: ['React', 'Node.js', 'MongoDB'],
       color: 'bg-gradient-to-r from-indigo-500 to-purple-500'
     },
     {
       id: 2,
-      title: 'InfentCareCompass',
+      title: 'AI Image Generator',
       description: 'Generate unique images using machine learning algorithms',
       url: '#',
-      image: '/projects/InfentCareCompass.webp',
+      image: '/api/placeholder/400/200',
       tags: ['Python', 'TensorFlow', 'React'],
       color: 'bg-gradient-to-r from-amber-500 to-pink-500'
     },
@@ -129,6 +121,77 @@ export default function EnhancedFuturisticLinkTree() {
       color: 'bg-gradient-to-r from-emerald-500 to-cyan-500'
     }
   ];
+
+  // Spaceship paths for orbital animations
+  const spaceships = [
+    {
+      id: 1,
+      orbitRadius: "25vw",
+      orbitDuration: 45,
+      size: 60,
+      delay: 0,
+      color: "#60a5fa"
+    },
+    {
+      id: 2,
+      orbitRadius: "35vw",
+      orbitDuration: 60,
+      size: 40,
+      delay: 5,
+      color: "#a78bfa"
+    },
+    {
+      id: 3,
+      orbitRadius: "20vw",
+      orbitDuration: 30,
+      size: 25,
+      delay: 10,
+      color: "#34d399"
+    },
+    {
+      id: 4,
+      orbitRadius: "40vw",
+      orbitDuration: 75,
+      size: 35,
+      delay: 15,
+      color: "#f472b6"
+    }
+  ];
+
+  const UFOSvg = ({ color, size }) => (
+    <svg
+      width={size}
+      height={size * 0.6} // Maintain aspect ratio
+      viewBox="0 0 100 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="drop-shadow-lg"
+    >
+      {/* UFO base */}
+      <ellipse cx="50" cy="30" rx="45" ry="15" fill="#1e2030" />
+      <ellipse cx="50" cy="30" rx="35" ry="8" fill="#111827" />
+      
+      {/* UFO dome */}
+      <ellipse cx="50" cy="25" rx="20" ry="10" fill="#111827" />
+      <path d="M50 15 L50 8" stroke={color} strokeWidth="2" />
+      <circle cx="50" cy="8" r="2" fill={color} />
+      
+      {/* Light ring */}
+      <ellipse cx="50" cy="32" rx="42" ry="13" fill="none" stroke={color} strokeWidth="2" strokeDasharray="3 3" />
+      
+      {/* Glow effects */}
+      <ellipse cx="50" cy="32" rx="42" ry="13" fill="none" stroke={color} strokeWidth="1" opacity="0.6" />
+      <ellipse cx="50" cy="32" rx="40" ry="12" fill="none" stroke={color} strokeWidth="1" opacity="0.4" />
+      
+      {/* Bottom light */}
+      <ellipse cx="50" cy="35" rx="5" ry="3" fill={color} opacity="0.7" />
+      
+      {/* Windows */}
+      <circle cx="35" cy="25" r="2" fill={color} opacity="0.9" />
+      <circle cx="50" cy="23" r="2" fill={color} opacity="0.9" />
+      <circle cx="65" cy="25" r="2" fill={color} opacity="0.9" />
+    </svg>
+  );
 
   const cursorVariants = {
     default: {
@@ -167,7 +230,7 @@ export default function EnhancedFuturisticLinkTree() {
 
   return (
     <div 
-      className="min-h-screen bg-[#15162b] text-white flex flex-col items-center justify-start py-12 px-4 overflow-hidden relative select-none"
+      className="min-h-screen bg-black text-white flex flex-col items-center justify-start py-12 px-4 overflow-hidden relative"
       ref={containerRef}
     >
       {/* Custom cursor */}
@@ -176,6 +239,31 @@ export default function EnhancedFuturisticLinkTree() {
         variants={cursorVariants}
         animate={cursorVariant}
       />
+
+      {/* Starfield background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(100)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: Math.random() * 3 + 1 + "px",
+              height: Math.random() * 3 + 1 + "px",
+              top: Math.random() * 100 + "%",
+              left: Math.random() * 100 + "%",
+            }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Futuristic grid background */}
       <div className="absolute inset-0 opacity-20">
@@ -198,7 +286,7 @@ export default function EnhancedFuturisticLinkTree() {
             scale: [1, 1.1, 0.9, 1]
           }}
           transition={{
-            duration: 10,
+            duration: 20,
             repeat: Infinity,
             repeatType: "reverse"
           }}
@@ -211,7 +299,7 @@ export default function EnhancedFuturisticLinkTree() {
             scale: [1, 0.9, 1.1, 1]
           }}
           transition={{
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse"
           }}
@@ -224,12 +312,53 @@ export default function EnhancedFuturisticLinkTree() {
             scale: [1, 1.2, 0.8, 1]
           }}
           transition={{
-            duration: 10,
+            duration: 18,
             repeat: Infinity,
             repeatType: "reverse"
           }}
         />
       </div>
+
+      {/* Orbiting Spaceships */}
+      {spaceships.map(ship => (
+        <div key={ship.id} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
+          <motion.div
+            style={{
+              width: ship.orbitRadius,
+              height: ship.orbitRadius,
+              borderRadius: "50%",
+              position: "relative"
+            }}
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: ship.orbitDuration,
+              repeat: Infinity,
+              ease: "linear",
+              delay: ship.delay
+            }}
+          >
+            <motion.div
+              style={{
+                position: "absolute",
+                top: "0%",
+                left: "50%",
+                translateX: "-50%"
+              }}
+              whileHover={{ scale: 1.2 }}
+              animate={{
+                filter: ["drop-shadow(0 0 8px " + ship.color + "60)", "drop-shadow(0 0 15px " + ship.color + "90)", "drop-shadow(0 0 8px " + ship.color + "60)"]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+            >
+              <UFOSvg color={ship.color} size={ship.size} />
+            </motion.div>
+          </motion.div>
+        </div>
+      ))}
 
       {/* Futuristic scanning line effect */}
       <motion.div
@@ -238,7 +367,7 @@ export default function EnhancedFuturisticLinkTree() {
           y: [-1000, 2000]
         }}
         transition={{
-          duration: 1,
+          duration: 7,
           repeat: Infinity,
           ease: "linear"
         }}
@@ -246,7 +375,7 @@ export default function EnhancedFuturisticLinkTree() {
 
       {/* Profile section */}
       <motion.div 
-        className="z-10 mb-8 flex flex-col items-center"
+        className="z-20 mb-8 flex flex-col items-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -338,7 +467,7 @@ export default function EnhancedFuturisticLinkTree() {
 
       {/* Navigation Tabs */}
       <motion.div 
-        className="z-10 max-w-md w-full mb-6 flex justify-center gap-2"
+        className="z-20 max-w-md w-full mb-6 flex justify-center gap-2"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.5 }}
@@ -375,7 +504,7 @@ export default function EnhancedFuturisticLinkTree() {
         {activeSection === 'links' && (
           <motion.div 
             key="links"
-            className="z-10 max-w-md w-full space-y-4"
+            className="z-20 max-w-md w-full space-y-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
@@ -392,12 +521,10 @@ export default function EnhancedFuturisticLinkTree() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.3 }}
                 onMouseEnter={() => {
-                  setIsHovering(true);
                   setActiveLink(link.id);
                   enterHover();
                 }}
                 onMouseLeave={() => {
-                  setIsHovering(false);
                   setActiveLink(null);
                   leaveHover();
                 }}
@@ -460,7 +587,7 @@ export default function EnhancedFuturisticLinkTree() {
         {activeSection === 'projects' && (
           <motion.div 
             key="projects"
-            className="z-10 max-w-md w-full space-y-6"
+            className="z-20 max-w-md w-full space-y-6"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -532,13 +659,13 @@ export default function EnhancedFuturisticLinkTree() {
 
       {/* Footer */}
       <motion.div 
-        className="mt-12 text-center text-xs text-gray-500 z-10"
+        className="mt-12 text-center text-xs text-gray-500 z-20"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.3, duration: 0.5 }}
       >
         <p>© 2025 Amar Jha · All rights reserved</p>
-        
+        <p className="mt-1 text-blue-500/70">Built with React, Tailwind CSS & Framer Motion</p>
       </motion.div>
 
       <style jsx>{`
