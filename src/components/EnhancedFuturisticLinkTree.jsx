@@ -103,32 +103,60 @@ export default function EnhancedFuturisticLinkTree() {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js and MongoDB',
+      title: 'Radical Unlearning',
+      description: 'A learning platform for unschoolers with coaching and resource tools.',
+      url: 'https://dev.radical-unlearning.com/',
+      image: 'https://amarjha.tech/assets/radical_unlearning-B6gdgr3Z.png',
+      tags: ['React', 'Redux Toolkit', 'MongoDB'],
+      color: 'bg-gradient-to-r from-pink-500 to-yellow-500'
+    },
+    {
+      id: 2,
+      title: 'UdemyGo',
+      description: 'Educational site for accredited online degrees and mentorship support.',
+      url: 'https://udemygo.com/',
+      image: 'https://amarjha.tech/assets/udemyGo-DA8eNoTC.png',
+      tags: ['React', 'Tailwind CSS', 'Vercel'],
+      color: 'bg-gradient-to-r from-cyan-500 to-blue-500'
+    },
+    {
+      id: 3,
+      title: 'Electramart',
+      description: 'MERN-based e-commerce site with cart, JWT auth, and admin dashboard.',
       url: 'https://www.electramart.ninja/',
-      image: '/projects/Electramartproject.webp',
+      image: 'https://amarjha.tech/assets/Electramart(project)-DJkp14_D.png',
       tags: ['React', 'Node.js', 'MongoDB'],
       color: 'bg-gradient-to-r from-indigo-500 to-purple-500'
     },
     {
-      id: 2,
-      title: 'InfentCareCompass',
-      description: 'Generate unique images using machine learning algorithms',
-      url: '#',
-      image: '/projects/InfentCareCompass.webp',
-      tags: ['Python', 'TensorFlow', 'React'],
-      color: 'bg-gradient-to-r from-amber-500 to-pink-500'
+      id: 4,
+      title: 'Nifa Overseas',
+      description: 'Corporate site for an exporter with modern layout and animations.',
+      url: 'https://nifaoverseas.com/',
+      image: 'https://amarjha.tech/assets/nifaOverseas-9sHNVpvm.png',
+      tags: ['React', 'GSAP', 'Tailwind CSS'],
+      color: 'bg-gradient-to-r from-emerald-500 to-teal-500'
     },
     {
-      id: 3,
-      title: 'Smart Home Dashboard',
-      description: 'IoT dashboard for monitoring and controlling smart home devices',
-      url: '#',
-      image: '/api/placeholder/400/200',
-      tags: ['React', 'Node.js', 'IoT'],
-      color: 'bg-gradient-to-r from-emerald-500 to-cyan-500'
-    }
+      id: 5,
+      title: 'PortfolioPioneer',
+      description: 'Personal portfolio website with project showcase and contact form.',
+      url: 'https://amarjha.tech/',
+      image: 'https://amarjha.tech/assets/PortfolioPioner2(project)-DKpvGksf.png',
+      tags: ['React', 'Tailwind CSS', 'GSAP'],
+      color: 'bg-gradient-to-r from-orange-500 to-pink-500'
+    },
+    {
+      id: 6,
+      title: 'InfantCare Compass',
+      description: 'MERN app for infant health tracking and guidance to new parents.',
+      url: '',
+      image: 'https://amarjha.tech/assets/InfentCareCompass-BhbFS4Hj.png',
+      tags: ['React', 'Node.js', 'MongoDB'],
+      color: 'bg-gradient-to-r from-lime-500 to-green-500'
+    },
   ];
+  
 
   const cursorVariants = {
     default: {
